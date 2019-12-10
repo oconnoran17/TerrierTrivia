@@ -41,12 +41,12 @@
 //        console.log("Error: " + error.code);
 //     });
 
-//      //Get Elements
-//      const preObject=document.getElementById('user');
+     //Get Elements
+     const preObject=document.getElementById('user');
 
-//      //Create References
-//      const dbRefObject = firebase.database().ref().child('user');
-//      //Syn Changes
-//      dbRefObject.on('value',snap => console.log(snap.val()));
+     //Create References
+     const dbRefObject = firebase.database().ref().child('user');
+     //Syn Changes
+     dbRefObject.on('value',snap => console.log(snap.val()));
 
 }());
