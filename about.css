@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+body, html{
+    height: calc(100% - 2em);
+    margin: 0;
+    font-family: 'Montserrat';
+}
+body{
+    background-color: #CE5C5C;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+aside{
+    background-color: #501414;
+    color: white;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 2em;
+    background-size: cover;
+}
+figure{
+    margin: 0;
+    height: 380px;
+    width: 255px;
+}
+img{
+    width: 150px;
+    padding-top: 314px;
+    padding-left: 45px;
+}
+figcaption{
+    font-size: 1.3em;
+    padding: 2em;
+    font-weight: bold;
+}
+nav{
+    background: white;
+    background-size: auto;
+}
+ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8em;
+    display: block;
+    padding: 1.5em 3em;
+    background-color: rgba(255,255,255,.35);
+    color: white;
+}
+main{
+    background: #BF9393;
+    padding: 1em 1.4em;
+    border-radius: 10px;
+    width: 800px;
+    height: 280px;
+}
+h1{
+    margin: 0;
+    position: absolute;
+    left: 600px;
+    font-family: 'Georgia';
+    font-size: 3em;
+}
+h2{
+    margin:0;
+    font-family: 'Georgia';
+    font-size: 1em;
+    position: absolute;
+    padding-left: 585px;
+    padding-top: 98px;
+}
+h3{
+    margin:0;
+    font-family: 'Georgia';
+    font-size: 2em;
+    padding-top:0px;
+    padding-bottom: 25px;
+}
+p1{
+    text-align: left;
+    padding-right: 650px;
+    font-family: 'Georgia';
+    font-size: 1.3em;
+}
+@media only screen and (min-width: 768px){
+    body{
+        display: grid;
+        grid-template-columns: 20% auto;
+        padding: 2em;
+    }
+    aside{
+        position: absolute;
+        background: #501414;
+        grid-template-columns: auto;
+        grid-template-rows: 20% auto;
+        padding: 0;
+        float: left;
+    }
+    main{
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        padding: 4em;
+        background: #BF9393;
+        background-size: 70%;
+        text-align: center;
+        float: inline-start;
+    }
+    figcaption{
+        text-align: center;
+        color: white;
+
+    }
+    ul{
+        display: block;
+        margin-top: 2em;
+    }
+    ul li a:hover{
+        background-color: black !important;
+    }
+    nav{
+        background: none;
+    }
+}
