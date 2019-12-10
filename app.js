@@ -3,7 +3,7 @@
         const config={
             apiKey:"AIzaSyCOp8f7iPBDQfqUolcH97xgDCgBgFVNZWM",
             authDomain:"quizapp-29372.firebaseapp.com",
-            databaseURL:"https://quizapp-29372.firebaseio.com/",
+            databaseURL:"https://quizapp-29372.firebaseio.com",
             storageBucket:"quizapp-29372.appspot.com"
 
         };
