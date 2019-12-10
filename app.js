@@ -9,7 +9,7 @@
         };
     firebase.initializeApp(config);
     
-    var userDataRef = firebase.database().ref("UserData").orderByKey();
+    var userDataRef = firebase.database().ref("user").orderByKey();
     userDataRef.once("value").then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.key;
