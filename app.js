@@ -51,7 +51,7 @@
     var data = [1,2,3,4,5,6,8,9,10];
     var list_html = "<ul>";
     var my_div = document.getElementById("leaderboard_div");
-    for (var i = 0; i < data.length(); i++) {
+    for (var i = 0; i < data.length; i++) {
         list_html += "<li>" + data[i] + "</li>";
     }
     list_html += "</ul>";
