@@ -8,13 +8,20 @@
 
         };
     firebase.initializeApp(config);
+    var ref = firebase.database().ref();
 
-    //Get Elements
-    const preObject=document.getElementById('user');
+    ref.on("value", function(snapshot) {
+       console.log(snapshot.val());
+    }, function (error) {
+       console.log("Error: " + error.code);
+    });
 
-    //Create References
-    const dbRefObject = firebase.database().ref().child('user');
-    //Syn Changes
-    dbRefObject.on('value',snap => console.log(snap.val()));
+//     //Get Elements
+//     const preObject=document.getElementById('user');
+
+//     //Create References
+//     const dbRefObject = firebase.database().ref().child('user');
+//     //Syn Changes
+//     dbRefObject.on('value',snap => console.log(snap.val()));
 
 }());
