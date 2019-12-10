@@ -7,7 +7,7 @@
             storageBucket:"quizapp-29372.appspot.com"
 
         };
-    firebase.initializeApp(cofig);
+    firebase.initializeApp(config);
 
     //Get Elements
     const preObject=document.getElementById('user');
