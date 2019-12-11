@@ -25,6 +25,7 @@
           }
         }
      }while(swapped);
+     console.log("we are here");
      console.log(array);
   
     //add sorted objects to html
