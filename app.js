@@ -3,7 +3,7 @@ function onDatabaseChange(snap) {
     var data_obj = snap.val();
     var my_div = document.getElementById("leaderboard_div");
     for (var entry in data_obj) {
-        list_html += "<li>" + data_obj[entry].userName + "</li>" + data_obj[entry].userScore + "</li>";
+        list_html += "<li>" + data_obj[entry].userName + data_obj[entry].userScore + "</li>";
     }
     list_html += "</ul>";
     my_div.innerHTML = list_html;
