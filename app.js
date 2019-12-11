@@ -1,13 +1,22 @@
 function onDatabaseChange(snap) {
     var list_html = "<ul>";
+    var space = "           ";
     var data_obj = snap.val();
     var my_div = document.getElementById("leaderboard_div");
     for (var entry in data_obj) {
-        list_html += "<li>" + data_obj[entry].userName + "          " + data_obj[entry].userScore + "</li>";
+        list_html += "<li>" + data_obj[entry].userName + space + data_obj[entry].userScore + "</li>";
     }
     list_html += "</ul>";
     my_div.innerHTML = list_html;
 }
+
+// var HTML = "<table border=1 width=100%><tr>";
+// for(j=1;j<=10;j++)
+// {
+//     HTML += "<td align=center>"+String.fromCharCode(j+64)+"</td>";
+// }
+// HTML += "</tr></table>";
+// document.getElementById("outputDiv").innerHTML = HTML;
 
 (function(){
     //Initialize Firebase
