@@ -95,7 +95,7 @@
      //Create References
      const dbRefObject = firebase.database().ref().child('user');
      //Syn Changes
-     dbRef.orderByChild("userScore").on("child_added", snap => {console.log(snap.val());
+     dbRefObject.orderByChild("userScore").on("child_added", snap => {console.log(snap.val());
      });
      dbRefObject.on('value',snap => onDatabaseChange(snap));
 }());
