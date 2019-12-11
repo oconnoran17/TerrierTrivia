@@ -94,10 +94,10 @@
      //Syn Changes
      
      //Show sorted values n the console: works
-     dbRefObject.orderByChild("userScore").on("child_added", snap => {console.log(snap.val());
-     });
+     //dbRefObject.orderByChild("userScore").on("child_added", snap => {console.log(snap.val());
+     //});
      //Show sorted values on the page: does not work
      dbRefObject.orderByChild("userScore").on("child_added", snap => onDatabaseChange(snap));
      //Show unsorted values on the screen: works
-     dbRefObject.on('value',snap => onDatabaseChange(snap));
+     //dbRefObject.on('value',snap => onDatabaseChange(snap));
 }());
