@@ -13,6 +13,7 @@
          array[count] = data_obj[index];
          count++;
      }
+     
      //sort the array
      do{
         for (i = 0; i < (array.length-1); i++) {
@@ -24,6 +25,7 @@
           }
         }
      }while(swapped);
+     console.log(array);
   
     //add sorted objects to html
     for (j = 0; j < (array.length); j++) {
