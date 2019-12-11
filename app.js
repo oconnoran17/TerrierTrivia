@@ -72,9 +72,6 @@
 //       });
 //     });
     
-    
-    
-    
 //     var userDataRef = firebase.database().ref("user").orderByKey();
 //     userDataRef.once("value").then
 //     (function(snapshot)) {
@@ -98,4 +95,4 @@
      dbRefObject.orderByChild("userScore").on("child_added", snap => onDatabaseChange(snap));
      });
      //dbRefObject.on('value',snap => onDatabaseChange(snap));
-}());
+//}());
