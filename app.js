@@ -1,3 +1,14 @@
+function onDatabaseChange(snap) {
+    var list_html = "<ul>";
+    var data_list = snap.list();
+    var my_div = document.getElementById("leaderboard_div");
+    for (var i = 0; i < data_list.length; i++) {
+        list_html += "<li>" + data_list[i].userScore + "</li>";
+    }
+    list_html += "</ul>";
+    my_div.innerHTML = list_html;
+}
+
 (function(){
     //Initialize Firebase
         const config={
@@ -47,14 +58,5 @@
      //Create References
      const dbRefObject = firebase.database().ref().child('user');
      //Syn Changes
-     dbRefObject.on('value',snap => console.log(snap.val()));
-    var data = [1,2,3,4,5,6,8,9,10];
-    var list_html = "<ul>";
-    var my_div = document.getElementById("leaderboard_div");
-    for (var i = 0; i < data.length; i++) {
-        list_html += "<li>" + data[i] + "</li>";
-    }
-    list_html += "</ul>";
-    my_div.innerHTML = list_html;
-
+     dbRefObject.on('value',snap => onDatabaseChange(snap));
 }());
