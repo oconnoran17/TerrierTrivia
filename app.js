@@ -17,7 +17,7 @@
      do{
         for (i = 0; i < (array.length-1); i++) {
           if(array[i].userScore < array[i+1].userScore) {
-                let tmp = data_obj[entry];
+                let tmp = data_obj[i];
                 array[i] = array[i+1];
                 array[i+1] = tmp;
                 swapped = true;
