@@ -5,6 +5,7 @@
      var colon = ": ";
      var space = " ";
      var data_obj = snap.val();
+     var swapped = false;
     var my_div = document.getElementById("leaderboard_div");
   
      //Put objects into an array
@@ -25,9 +26,7 @@
           }
         }
      }while(swapped);
-     console.log("we are here");
-     
-  
+       
     //add sorted objects to html
     for (j = 0; j < (array.length); j++) {
          list_html += "<li>" + array[j].name + colon + space + array[j].score + "</li>";
