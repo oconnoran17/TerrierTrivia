@@ -1,10 +1,15 @@
  function onDatabaseChange(snap) {
      var list_html = "<ul>";
+     var array;
+    
      var colon = ": ";
      var space = " ";
      var data_obj = snap.val();
     var my_div = document.getElementById("leaderboard_div");
-     console.log(data_obj);
+     console.log(data_obj)
+     for (var index in data_obj) {
+         
+     }
     do {
      for (var entry in data_obj) {
          if (data_obj[entry].userScore < data_obj[entry + 1].userScore) {
@@ -80,21 +85,11 @@
 
      //Create References
      console.log("we are here");
-     const dbRefObject = firebase.database().ref().child('user').orderby('userScore');
+     const dbRefObject = firebase.database().ref().child('user');
      //Syn Changes
      
    //Show sorted values in the console: works
-     //dbRefObject.orderByChild("userScore").on("child_added", snap => {console.log(snap.val());
-     //});
-   //Show sorted values on the page: does not work
-     //dbRefObject.orderByChild("userScore").on("child_added", snap => {onDatabaseChange(snap);
-     //})
-   //Show unsorted values on the screen: works
-     //dbRefObject.on('value',snap => onDatabaseChange(snap));
- 
-     dbRefObject.once('value').then(function(snapshot){
-    
-           var data_obj = snapshot.val();
+     dbRefObject.orderByChild("userScore").on("child_added", snap => {var data_obj = snapshot.val();
            console.log(data_obj); 
 
            var my_div = document.getElementById("leaderboard_div");
@@ -118,10 +113,44 @@
                 list_html += "<li>" + data_obj[index].userName + colon + space + data_obj[index].userScore + "</li>";
             }
             list_html += "</ul>";
-            my_div.innerHTML = list_html;      
+            my_div.innerHTML = list_html;   
+     });
+   //Show sorted values on the page: does not work
+     //dbRefObject.orderByChild("userScore").on("child_added", snap => {onDatabaseChange(snap);
+     //})
+   //Show unsorted values on the screen: works
+     //dbRefObject.on('value',snap => onDatabaseChange(snap));
+ 
+//      dbRefObject.once('value').then(function(snapshot){
+    
+//            var data_obj = snapshot.val();
+//            console.log(data_obj); 
+
+//            var my_div = document.getElementById("leaderboard_div");
+//             console.log(data_obj);
+//            do {
+//             for (var entry in data_obj) 
+//             {
+//                 console.log(entry);
+//                 console.log(data_obj[entry]);
+//                 var burak = data_obj[entry];
+//                 console.log(burak.userScore);
+//                 if (data_obj[entry].userScore < data_obj[entry + 1].userScore) {
+//                        let tmp = data_obj[entry];
+//                        data_obj[entry] = data_obj[entry + 1];
+//                        data_obj[entry + 1] = tmp;
+//                        swapped = true;
+//                  }
+//                }
+//            } while(swapped);
+//            for (var index in data_obj) {
+//                 list_html += "<li>" + data_obj[index].userName + colon + space + data_obj[index].userScore + "</li>";
+//             }
+//             list_html += "</ul>";
+//             my_div.innerHTML = list_html;      
       
       
-      });
+//       });
      //dbRefObject.on('value',snap => {console.log(snap.val());
      //});
 }());
