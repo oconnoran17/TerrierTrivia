@@ -6,7 +6,6 @@
      var space = " ";
      var data_obj = snap.val();
     var my_div = document.getElementById("leaderboard_div");
-     console.log(data_obj)
   
      //Put objects into an array
      for (var index in data_obj) {
