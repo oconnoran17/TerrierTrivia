@@ -105,7 +105,6 @@
                 console.log(entry);
                 console.log(data_obj[entry]);
                 var burak = data_obj[entry];
-                console.log(burak[userScore]);
                 console.log(burak.userScore);
                 if (data_obj[entry].userScore < data_obj[entry + 1].userScore) {
                        let tmp = data_obj[entry];
