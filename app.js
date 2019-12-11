@@ -9,7 +9,7 @@
   
      //Put objects into an array
      for (var index in data_obj) {
-         let array[count] = {name: data_obj[index].userName, score: data_obj[index].userScore};
+         let array[count] = [{name: data_obj[index].userName, score: data_obj[index].userScore}];
          console.log(array[count]);
          count++;
      }
@@ -30,7 +30,7 @@
   
     //add sorted objects to html
     for (j = 0; j < (array.length); j++) {
-         list_html += "<li>" + array[j].userName + colon + space + array[j].userScore + "</li>";
+         list_html += "<li>" + array[j].name + colon + space + array[j].score + "</li>";
      }
      list_html += "</ul>";
      my_div.innerHTML = list_html;
