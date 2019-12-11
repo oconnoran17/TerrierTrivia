@@ -100,7 +100,10 @@
            var my_div = document.getElementById("leaderboard_div");
             console.log(data_obj);
            do {
-            for (var entry in data_obj) {
+            for (var entry in data_obj) 
+            {
+                console.log(entry);
+                console.log(data_obj[entry]);
                 if (data_obj[entry].userScore < data_obj[entry + 1].userScore) {
                        let tmp = data_obj[entry];
                        data_obj[entry] = data_obj[entry + 1];
