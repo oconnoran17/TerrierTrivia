@@ -90,7 +90,12 @@
      //dbRefObject.orderByChild("userScore").on("child_added", snap => {onDatabaseChange(snap);
      //})
    //Show unsorted values on the screen: works
-     dbRefObject.on('value',snap => onDatabaseChange(snap));
+     //dbRefObject.on('value',snap => onDatabaseChange(snap));
+ 
+     dbRefObject.once('value').then(function(snapshot){
+                           var trial = snapshot.val();
+                           console.log(trial);    
+                       });
      //dbRefObject.on('value',snap => {console.log(snap.val());
      //});
 }());
