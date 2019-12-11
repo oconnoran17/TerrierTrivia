@@ -1,6 +1,6 @@
 function onDatabaseChange(snap) {
     var list_html = "<ul>";
-    var space = " ";
+    var space = "\t";
     var data_obj = snap.val();
     var my_div = document.getElementById("leaderboard_div");
     for (var entry in data_obj) {
