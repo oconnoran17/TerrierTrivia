@@ -1,43 +1,43 @@
-function onDatabaseChange(snap) {
-    var list_html = "<ul>";
-    var colon = ": ";
-    var space = " ";
-    var data_obj = snap.val();
-    var my_div = document.getElementById("leaderboard_div");
-    
-    //Sort Elements
-    do {
-        swapped = false;
-        for (var entry in data_obj) {
-            if (data_obj[entry].userScore > data_obj[entry+1].userScore) {
-                let tmp = data_obj[entry];
-                data_obj[entry] = data_obj[entry + 1];
-                data_obj[entry + 1] = tmp;
-                swapped = true;
-            }
-        }
-    } while (swapped);
-    
-    //Print values
-    for (var entry in data_obj) {
-        list_html += "<li>" + data_obj[entry].userName + colon + space + data_obj[entry].userScore + "</li>";
-    }
-    list_html += "</ul>";
-    my_div.innerHTML = list_html;
-}
-
 // function onDatabaseChange(snap) {
 //     var list_html = "<ul>";
 //     var colon = ": ";
 //     var space = " ";
 //     var data_obj = snap.val();
 //     var my_div = document.getElementById("leaderboard_div");
+    
+//     //Sort Elements
+//     do {
+//         swapped = false;
+//         for (var entry in data_obj) {
+//             if (data_obj[entry].userScore > data_obj[entry+1].userScore) {
+//                 let tmp = data_obj[entry];
+//                 data_obj[entry] = data_obj[entry + 1];
+//                 data_obj[entry + 1] = tmp;
+//                 swapped = true;
+//             }
+//         }
+//     } while (swapped);
+    
+//     //Print values
 //     for (var entry in data_obj) {
 //         list_html += "<li>" + data_obj[entry].userName + colon + space + data_obj[entry].userScore + "</li>";
 //     }
 //     list_html += "</ul>";
 //     my_div.innerHTML = list_html;
 // }
+
+ function onDatabaseChange(snap) {
+     var list_html = "<ul>";
+     var colon = ": ";
+     var space = " ";
+     var data_obj = snap.val();
+    var my_div = document.getElementById("leaderboard_div");
+     for (var entry in data_obj) {
+         list_html += "<li>" + data_obj[entry].userName + colon + space + data_obj[entry].userScore + "</li>";
+     }
+     list_html += "</ul>";
+     my_div.innerHTML = list_html;
+ }
 
 (function(){
     //Initialize Firebase
