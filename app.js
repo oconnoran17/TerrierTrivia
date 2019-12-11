@@ -5,7 +5,6 @@
      var colon = ": ";
      var space = " ";
      var data_obj = snap.val();
-     var swapped = false;
     var my_div = document.getElementById("leaderboard_div");
   
      //Put objects into an array
@@ -24,6 +23,8 @@
                 array[i+1] = tmp;
                 swapped = true;
           }
+          else {
+                swapped = false;
         }
      }while(swapped);
        
