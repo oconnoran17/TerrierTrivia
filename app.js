@@ -94,10 +94,10 @@
      //Syn Changes
      //dbRefObject.orderByChild("userScore").on("child_added", snap => onDatabaseChange(snap));
      //});
-     dbRefObject.orderByChild("userScore").limitToLast(3).on("child_added", snap => {console.log(snap.val());
-     });
+     //dbRefObject.orderByChild("userScore").limitToLast(3).on("child_added", snap => {console.log(snap.val());
+     //});
      dbRefObject.orderByChild("userScore").limitToLast(3).on("child_added", snap => {onDatabaseChange(snap);
      });
      
-     //dbRefObject.on('value',snap => onDatabaseChange(snap));
+     //dbRefObject.on('value',snap => onDatabaseChange(snap));.v
 }());
