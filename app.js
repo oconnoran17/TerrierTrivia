@@ -9,7 +9,7 @@
   
      //Put objects into an array
      for (var index in data_obj) {
-         array[count] = data_obj[index];
+         let array[count] = {name: data_obj[index].userName, score: data_obj[index].userScore};
          console.log(array[count]);
          count++;
      }
@@ -17,7 +17,7 @@
      //sort the array
      do{
         for (i = 0; i < (array.length-1); i++) {
-          if(array[i].userScore < array[i+1].userScore) {
+          if(array[i].score < array[i+1].score) {
                 let tmp = data_obj[i];
                 array[i] = array[i+1];
                 array[i+1] = tmp;
