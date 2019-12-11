@@ -1,6 +1,6 @@
 function onDatabaseChange(snap) {
     var list_html = "<ul>";
-    var data_list = snap.list();
+    var data_list = snap.val();
     var my_div = document.getElementById("leaderboard_div");
     for (var i = 0; i < data_list.length; i++) {
         list_html += "<li>" + data_list[i].userScore + "</li>";
