@@ -37,7 +37,8 @@
      var list_html = "<ul>";
      var colon = ": ";
      var space = " ";
-     var data_obj = snap.val();
+     //var data_obj = snap.val();
+     var data_obj = snap;
     var my_div = document.getElementById("leaderboard_div");
      for (var entry in data_obj) {
          list_html += "<li>" + data_obj[entry].userName + colon + space + data_obj[entry].userScore + "</li>";
@@ -97,10 +98,10 @@
      //dbRefObject.orderByChild("userScore").on("child_added", snap => {console.log(snap.val());
      //});
    //Show sorted values on the page: does not work
-     dbRefObject.orderByChild("userScore").on("child_added", snap => {onDatabaseChange(snap.val());
+     dbRefObject.orderByChild("userScore").on("child_added", snap => {onDatabaseChange(snap);
      })
    //Show unsorted values on the screen: works
      //dbRefObject.on('value',snap => onDatabaseChange(snap));
-     dbRefObject.on('value',snap => {console.log(snap.val());
-     });
+     //dbRefObject.on('value',snap => {console.log(snap.val());
+     //});
 }());
