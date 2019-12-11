@@ -92,7 +92,7 @@
      const preObject=document.getElementById('user');
 
      //Create References
-     console.log("we are here");
+     //console.log("we are here");
      const dbRefObject = firebase.database().ref().child('user');
      //Syn Changes
      
