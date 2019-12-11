@@ -89,7 +89,7 @@
      //Syn Changes
      
    //Show sorted values in the console: works
-     dbRefObject.orderByChild("userScore").on("child_added", snap => {var data_obj = snapshot.val();
+     dbRefObject.orderByChild("userScore").on("child_added", snap => {var data_obj = snap.val();
            console.log(data_obj); 
 
            var my_div = document.getElementById("leaderboard_div");
