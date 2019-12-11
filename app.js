@@ -10,6 +10,7 @@
      //Put objects into an array
      for (var index in data_obj) {
          array[count] = data_obj[index];
+         console.log(array[count]);
          count++;
      }
      
@@ -25,7 +26,7 @@
         }
      }while(swapped);
      console.log("we are here");
-     console.log(array);
+     
   
     //add sorted objects to html
     for (j = 0; j < (array.length); j++) {
