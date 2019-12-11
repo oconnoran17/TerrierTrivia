@@ -25,6 +25,7 @@
           }
           else {
                 swapped = false;
+          }
         }
      }while(swapped);
        
