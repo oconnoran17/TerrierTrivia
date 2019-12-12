@@ -1,56 +1,56 @@
-//  function onDatabaseChange(snap) {
-//      var list_html = "<ul>";
-//      var array = new Array();
-//      var count = 0;
-//      var colon = ": ";
-//      var space = " ";
-//      var data_obj = snap.val();
-//     var my_div = document.getElementById("leaderboard_div");
-  
-//      //Put objects into an array
-//      for (var index in data_obj) {
-//          array[count] = [{name: data_obj[index].userName, score: data_obj[index].userScore}];
-//          count = count + 1;
-//          console.log(count);
-//      }
-//    console.log(array);
-     
-//      //sort the array
-//      do{
-//         for (i = 0; i < (array.length-1); i++) {
-//           if(array[i].score < array[i+1].score) {
-//                 let tmp = array[i];
-//                 array[i] = array[i+1];
-//                 array[i+1] = tmp;
-//                 swapped = true;
-//           }
-//           else {
-//                 swapped = false;
-//           }
-//         }
-//      }while(swapped);
-       
-//     //add sorted objects to html
-//     for (j = 0; j < (array.length); j++) {
-//          console.log(array[j]);
-//          list_html += "<li>" + array[j].name + colon + space + array[j].score + "</li>";
-//      }
-//      list_html += "</ul>";
-//      my_div.innerHTML = list_html;
-//  }
-    
  function onDatabaseChange(snap) {
      var list_html = "<ul>";
+     var array = new Array();
+     var count = 0;
      var colon = ": ";
      var space = " ";
      var data_obj = snap.val();
     var my_div = document.getElementById("leaderboard_div");
-     for (var entry in data_obj) {
-         list_html += "<li>" + data_obj[entry].userName + colon + space + data_obj[entry].userScore + "</li>";
+  
+     //Put objects into an array
+     for (var index in data_obj) {
+         array.push({name: data_obj[index].userName, score: data_obj[index].userScore});
+         count = count + 1;
+         console.log(count);
+     }
+   console.log(array);
+     
+     //sort the array
+     do{
+        for (i = 0; i < (array.length-1); i++) {
+          if(array[i].score < array[i+1].score) {
+                let tmp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = tmp;
+                swapped = true;
+          }
+          else {
+                swapped = false;
+          }
+        }
+     }while(swapped);
+       
+    //add sorted objects to html
+    for (j = 0; j < (array.length); j++) {
+         console.log(array[j]);
+         list_html += "<li>" + array[j].name + colon + space + array[j].score + "</li>";
      }
      list_html += "</ul>";
      my_div.innerHTML = list_html;
  }
+    
+//  function onDatabaseChange(snap) {
+//      var list_html = "<ul>";
+//      var colon = ": ";
+//      var space = " ";
+//      var data_obj = snap.val();
+//     var my_div = document.getElementById("leaderboard_div");
+//      for (var entry in data_obj) {
+//          list_html += "<li>" + data_obj[entry].userName + colon + space + data_obj[entry].userScore + "</li>";
+//      }
+//      list_html += "</ul>";
+//      my_div.innerHTML = list_html;
+//  }
 
 (function(){
     //Initialize Firebase
