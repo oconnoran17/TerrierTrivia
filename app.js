@@ -9,8 +9,7 @@
   
      //Put objects into an array
      for (var index in data_obj) {
-         array[count] = [{name: data_obj[index].userName, score: data_obj[index].userScore}];
-         count = count + 1;
+         array.push({name: data_obj[index].userName, score: data_obj[index].userScore}]);
      }
      
      //sort the array
