@@ -10,7 +10,7 @@
      //Put objects into an array
      for (var index in data_obj) {
          array.push({name: data_obj[index].userName, score: data_obj[index].userScore});
-         console.log(array[count]);
+         console.log(array[count].score);
          console.log(count);
          count = count + 1;
      }
