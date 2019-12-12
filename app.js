@@ -94,7 +94,7 @@
 
      //Create References
      //console.log("we are here");
-     const dbRefObject = firebase.database().ref().child('user');
+     const dbRefObject = firebase.database().ref().child('user').orderByChild('userScore');
      //Syn Changes
      
    //Show sorted values in the console: works
