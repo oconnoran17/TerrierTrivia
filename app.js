@@ -15,7 +15,7 @@
 function onDatabaseChange(snap) {
      var list_html = "<ul>";
      var array = new Array();
-     var count = 0;
+     var count = 10;
      var colon = ": ";
      var space = " ";
      var data_obj = snap.val();
@@ -26,7 +26,7 @@ function onDatabaseChange(snap) {
          array.push({name: data_obj[index].userName, score: data_obj[index].userScore});
 //          console.log(array[count].score);
 //          console.log(count);
-         count = count + 1;
+
      }
    
      console.log(array.sort(compare));
@@ -46,9 +46,10 @@ function onDatabaseChange(snap) {
 //      }while(swapped);
        
     //add sorted objects to html
-    for (j = 0; j < (array.length); j++) {
+    for (j = 0; j < 10; j++) {
          console.log(array[j]);
-         list_html += "<li>" + array[j].name + colon + space + array[j].score + "</li>";
+         list_html += "<li>" + count + ")" + " " + array[j].name + colon + space + array[j].score + "</li>";
+         count = count - 1;
      }
      list_html += "</ul>";
      my_div.innerHTML = list_html;
