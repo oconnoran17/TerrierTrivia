@@ -90,11 +90,11 @@
 //     });
 
      //Get Elements
-     const preObject=document.getElementById('user');
+     var preObject=document.getElementById('user');
 
      //Create References
      //console.log("we are here");
-     const dbRefObject = firebase.database().ref('user').orderByChild('userScore');
+     var dbRefObject = firebase.database().ref('user').orderByChild('userScore');
      //Syn Changes
      
    //Show sorted values in the console: works
