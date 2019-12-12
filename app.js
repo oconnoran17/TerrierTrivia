@@ -24,12 +24,12 @@ function onDatabaseChange(snap) {
      //Put objects into an array
      for (var index in data_obj) {
          array.push({name: data_obj[index].userName, score: data_obj[index].userScore});
-         console.log(array[count].score);
-         console.log(count);
+//          console.log(array[count].score);
+//          console.log(count);
          count = count + 1;
      }
    
-     array.sort(compare);
+     console.log(array.sort(compare));
      //sort the array
 //      do{
 //         for (i = 0; i < (array.length-1); i++) {
