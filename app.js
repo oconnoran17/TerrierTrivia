@@ -1,4 +1,18 @@
- function onDatabaseChange(snap) {
+ function compare(a,b) {
+    const ascore = a.score;
+    const bscore = b.score;
+
+    let comparison = 0;
+    if (ascore < bscore) {
+     comparison = 1;
+    } else if (ascore > bscore) {
+     comparison = -1;
+    }
+    return comparison;
+}
+
+
+function onDatabaseChange(snap) {
      var list_html = "<ul>";
      var array = new Array();
      var count = 0;
@@ -15,21 +29,21 @@
          count = count + 1;
      }
    
-     
+     array.sort(compare);
      //sort the array
-     do{
-        for (i = 0; i < (array.length-1); i++) {
-          if(array[i].score < array[i+1].score) {
-                let tmp = array[i];
-                array[i] = array[i+1];
-                array[i+1] = tmp;
-                swapped = true;
-          }
-          else {
-                swapped = false;
-          }
-        }
-     }while(swapped);
+//      do{
+//         for (i = 0; i < (array.length-1); i++) {
+//           if(array[i].score < array[i+1].score) {
+//                 let tmp = array[i];
+//                 array[i] = array[i+1];
+//                 array[i+1] = tmp;
+//                 swapped = true;
+//           }
+//           else {
+//                 swapped = false;
+//           }
+//         }
+//      }while(swapped);
        
     //add sorted objects to html
     for (j = 0; j < (array.length); j++) {
