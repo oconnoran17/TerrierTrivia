@@ -15,7 +15,7 @@
 function onDatabaseChange(snap) {
      var list_html = "<ul>";
      var array = new Array();
-     var count = 10;
+     var count = 1;
      var colon = ": ";
      var space = " ";
      var data_obj = snap.val();
@@ -49,7 +49,7 @@ function onDatabaseChange(snap) {
     for (j = 0; j < 10; j++) {
          console.log(array[j]);
          list_html += "<li>" + count + ")" + " " + array[j].name + colon + space + array[j].score + "</li>";
-         count = count - 1;
+         count = count + 1;
      }
      list_html += "</ul>";
      my_div.innerHTML = list_html;
