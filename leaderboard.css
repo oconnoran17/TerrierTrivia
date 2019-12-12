@@ -81,14 +81,14 @@ h3{
     padding-bottom: 25px;
 }
 h4{
-    text-align: left;
+    text-align: center;
 }
 div{
     margin:0;
     font-family: 'Montserrat';
     font-size: 1em;
     padding-bottom: 200px;
-    text-align: left;
+    text-align: center;
     word-spacing: 10px;
 }
 @media only screen and (min-width: 768px){
